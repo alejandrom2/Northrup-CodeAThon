@@ -11,6 +11,6 @@ class Volunteer extends Model
 
 	public function distresses()
 	{
-		return $this->belongsToMany('App\distress')->withPivot('distress_id','volunteer_id');
+		return $this->belongsToMany('App\Distress')->withPivot('distress_id','volunteer_id');
 	}
 }

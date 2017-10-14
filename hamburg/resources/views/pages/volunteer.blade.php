@@ -20,60 +20,17 @@
     <br />
     <div class="row">
         <div class="col-4" style="height: 80vh; overflow: scroll">
-            <div class="card">
-                <h3 class="card-header text-center">John Doe</h3>
-                <div class="card-block">
-                    <h4 class="card-title">Experience:</h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet, vis possit corrumpit at. Deleniti dissentiet duo ea, dico erat virtute ex has. Latine feugait definiebas pro cu, ea vim habeo velit, idque minimum nec cu.</p>
-                    <a href="#" class="btn btn-primary">Contact</a>
-                    <a href="#" class="btn btn-secondary">Assigned</a>
+            @foreach($volunteers as $volunteer)
+                <div class="card">
+                    <h3 class="card-header text-center">{{$volunteer->name}}</h3>
+                    <div class="card-block">
+                        <h4 class="card-title">Experience:</h4>
+                        <p class="card-text">{{$volunteer->experience}}</p>
+                        <a href="#" class="btn btn-primary">Contact</a>
+                        <a href="#" class="btn btn-secondary">Assigned</a>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <h3 class="card-header text-center">John Doe</h3>
-                <div class="card-block">
-                    <h4 class="card-title">Experience:</h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet, vis possit corrumpit at. Deleniti dissentiet duo ea, dico erat virtute ex has. Latine feugait definiebas pro cu, ea vim habeo velit, idque minimum nec cu.</p>
-                    <a href="#" class="btn btn-primary">Contact</a>
-                    <a href="#" class="btn btn-secondary">Assigned</a>
-                </div>
-            </div>
-            <div class="card">
-                <h3 class="card-header text-center">John Doe</h3>
-                <div class="card-block">
-                    <h4 class="card-title">Experience:</h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet, vis possit corrumpit at. Deleniti dissentiet duo ea, dico erat virtute ex has. Latine feugait definiebas pro cu, ea vim habeo velit, idque minimum nec cu.</p>
-                    <a href="#" class="btn btn-primary">Contact</a>
-                    <a href="#" class="btn btn-secondary">Assigned</a>
-                </div>
-            </div>
-            <div class="card">
-                <h3 class="card-header text-center">John Doe</h3>
-                <div class="card-block">
-                    <h4 class="card-title">Experience:</h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet, vis possit corrumpit at. Deleniti dissentiet duo ea, dico erat virtute ex has. Latine feugait definiebas pro cu, ea vim habeo velit, idque minimum nec cu.</p>
-                    <a href="#" class="btn btn-primary">Contact</a>
-                    <a href="#" class="btn btn-secondary">Assigned</a>
-                </div>
-            </div>
-            <div class="card">
-                <h3 class="card-header text-center">John Doe</h3>
-                <div class="card-block">
-                    <h4 class="card-title">Experience:</h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet, vis possit corrumpit at. Deleniti dissentiet duo ea, dico erat virtute ex has. Latine feugait definiebas pro cu, ea vim habeo velit, idque minimum nec cu.</p>
-                    <a href="#" class="btn btn-primary">Contact</a>
-                    <a href="#" class="btn btn-secondary">Assigned</a>
-                </div>
-            </div>
-            <div class="card">
-                <h3 class="card-header text-center">John Doe</h3>
-                <div class="card-block">
-                    <h4 class="card-title">Experience:</h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet, vis possit corrumpit at. Deleniti dissentiet duo ea, dico erat virtute ex has. Latine feugait definiebas pro cu, ea vim habeo velit, idque minimum nec cu.</p>
-                    <a href="#" class="btn btn-primary">Contact</a>
-                    <a href="#" class="btn btn-secondary">Assigned</a>
-                </div>
-            </div>
+            @endforeach
         </div>
         <div class="col-8">
             <div id="map" style="width: 100%; height: 80vh;"></div>

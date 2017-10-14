@@ -19,4 +19,19 @@ class VolunteerController extends Controller
 
     	return redirect('/');
     }
+
+    public function getVolunteers()
+    {
+    	$volunteers = Volunteer::all();
+
+    	$distresses = Distress::with('locate')->get();
+
+	    $current_location = [
+	        'lat' => 33.891992,
+	        'lng' => -118.373088
+	    ];
+
+	    // dd($distresses->first()->relations);
+	    return view('pages.volunteer', compact('volunteers','distresses','current_location'));
+    }
 }
