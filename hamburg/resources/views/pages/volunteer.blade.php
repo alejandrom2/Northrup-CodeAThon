@@ -49,6 +49,17 @@
             position: uluru,
             map: map
         });
+
+        @foreach ($distresses as $distress)
+            @if (isset($distress->locate))
+                var marker = new google.maps.Marker({
+                    position: {lat: {{$distress->locate->lat}}, lng: {{$distress->locate->lng}} },
+                    map: map,
+                    title: 'Distress!',
+                    label: 'D'
+                });
+            @endif
+        @endforeach
     }
 </script>
 <script async defer

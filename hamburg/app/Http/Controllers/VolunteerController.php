@@ -31,7 +31,6 @@ class VolunteerController extends Controller
 	        'lng' => -118.373088
 	    ];
 
-	    // dd($distresses->first()->relations);
 	    return view('pages.volunteer', compact('volunteers','distresses','current_location'));
     }
 }
