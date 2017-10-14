@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('pages.landing');
 });
 
+Route::get('/form', function() {
+    return view('pages.emergency_form');
+});
+
 Route::get('/distresses', 'HomeController@distresses');
 Route::get('/volunteers', 'HomeController@volunteers');
 
