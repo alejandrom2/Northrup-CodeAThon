@@ -13,6 +13,7 @@
 <nav class="navbar navbar-light bg-faded">
     <h1 class="navbar-brand mb-0">SAVE THIS NUMBER! Call or Text 1-800-XXX-XXXX</h1>
 </nav>
+{{--<img src="https://images.unsplash.com/photo-1502820563747-6ef04d9f4f37?dpr=1&auto=compress,format&fit=crop&w=1950&h=&q=80&cs=tinysrgb&crop=" class="img-fluid" alt="" style="position: absolute">--}}
 <div class="container">
     <br />
     <div class="row d-flex align-items-center">
@@ -33,6 +34,8 @@
         </div>
     </div>
     <br />
+    <hr />
+    <br />
     <div class="container">
         <div class="row">
             <div class="col-6">
@@ -45,16 +48,16 @@
                 <button type="button" class="btn btn-primary btn-block">Download</button>
             </div>
             <div class="col-6">
-                <h1>Volunteer!</h1>
+                <h1 class="text-center">Volunteer!</h1>
                 <br />
                 <form>
                     <div class="form-group">
                         <label for="exampleInputEmail1" class="font-weight-bold">Name</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1" class="font-weight-bold">Point of Contact</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                         <small id="emailHelp" class="form-text text-muted">We need your help, but we need to contact you!</small>
                     </div>
                     <div class="form-group">
