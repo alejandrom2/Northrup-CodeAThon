@@ -1,0 +1,10 @@
+{
+    "name": "gabriel/hamburg",
+    "authors": [
+        {
+            "name": "Gabriel Alabastro",
+            "email": "gabriel.alabastro@gmail.com"
+        }
+    ],
+    "require": {}
+}
