@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/distresses', 'HomeController@distresses');
+Route::get('/resources', 'HomeController@resources');
 Route::get('/volunteers', 'HomeController@volunteers');
 
 Auth::routes();
