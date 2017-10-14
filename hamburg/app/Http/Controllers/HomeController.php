@@ -58,8 +58,8 @@ class HomeController extends Controller
         $shelter_location = $resources['shelter'];
 
         $current_location = [
-            'lat' => 34.2159622,
-            'lng' => -118.53401539999999
+            'lat' => 33.891992,
+            'lng' => -118.373088
         ];
         return view('pages.emergency_form', compact('current_location', 'zombie_location', 'water_location', 'power_location', 'shelter_location'));
     }
