@@ -14,4 +14,12 @@ class Distress extends Model
    {
    		return $this->belongsToMany('App\Volunteer')->withPivot('distress_id','volunteer_id');
    }
+   public function locate()
+   {
+ 		return $this->hasOne('App\Location','source_id','location_id');
+   }
+   
+   public function location() {
+	  return $this->locate()->where('source_type', '=', 'distress');
+	}
 }

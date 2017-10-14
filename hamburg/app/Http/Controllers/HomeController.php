@@ -26,11 +26,10 @@ class HomeController extends Controller
      */
     public function distresses()
     {
-        return Distress::with('volunteers')->get();
+        return Distress::with('volunteers','location')->get();
     }
     public function volunteers()
     {
         return Volunteer::with('distresses')->get();
     }
-    
 }
