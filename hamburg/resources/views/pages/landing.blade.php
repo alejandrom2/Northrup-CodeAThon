@@ -30,7 +30,7 @@
             </h1>
         </div>
         <div class="col-5">
-            <a href="/form">
+            <a href="{{url('/form')}}">
                 <button type="button" class="btn btn-danger btn-lg btn-block">Fill Out Emergency Form</button>
             </a>
         </div>
