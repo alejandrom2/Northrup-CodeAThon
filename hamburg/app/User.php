@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Roles;
 
 class User extends Authenticatable
 {
@@ -26,4 +27,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    public function userID(){
+        return $this->user_id; 
+    }
+    public function hasRoles($userID, $roles){
+        return Roles::where('role', $role)->where('user_id', $user_id)->get();
+    }
 }
