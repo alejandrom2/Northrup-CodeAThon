@@ -114,6 +114,9 @@
                     </div>
                 </div>
             </div>
+            {{-- Name this better --}}
+            <input type="hidden" name="orderNumber" id="lat" value="0" />
+            <input type="hidden" name="orderNumber" id="lng" value="0" />
             <br />
             <div class="row float-left">
                 <button type="button" class="btn btn-primary">Submit</button>
@@ -121,6 +124,11 @@
         </form>
     </div>
 </div>
+
+<script
+        src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+        crossorigin="anonymous"></script>
 
 <script>
     var geocoder;
@@ -143,6 +151,8 @@
                     map: map,
                     position: results[0].geometry.location
                 });
+                $('#lat').val(results[0].geometry.location.lat());
+                $('#lng').val(results[0].geometry.location.lng());
             } else {
                 alert('Geocode was not successful for the following reason: ' + status);
             }

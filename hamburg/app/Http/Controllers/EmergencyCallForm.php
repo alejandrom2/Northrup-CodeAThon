@@ -10,7 +10,7 @@ class EmergencyCallForm extends Controller
 {
     public function postForm(Request $request)
     {
-    	// $request = new Request(['name'=>'dummy','phone_number'=>'3235293159','experience'=>'doctor','lat'=>'123','long'=>'345']);
+    	// $request = new Request(['name'=>'dummy','phone_number'=>'3235293159','experience'=>'doctor','lat'=>'123','lng'=>'345']);
     	
     	$request->validate([
 	        'name' => 'required',
@@ -24,7 +24,7 @@ class EmergencyCallForm extends Controller
     	]);
     	$location = Location::create([
     		'lat' => $request->lat,
-    		'long' => $request->long,
+    		'lng' => $request->lng,
     		'source_type' => 'distress',
     		'source_id' => $volunteer['id']
     	]);
