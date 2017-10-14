@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 </head>
-<body>
+<body onload="initMap()">
 <!-- As a heading -->
 <nav class="navbar navbar-light bg-faded">
     <h1 class="navbar-brand mb-0">SAVE THIS NUMBER! Call or Text 1-800-XXX-XXXX</h1>
@@ -33,6 +33,8 @@
         </div>
     </div>
     <br />
+    <hr />
+    <br />
     <div class="container">
         <h1 class="text-center">Emergency Form</h1>
         <br />
@@ -43,6 +45,16 @@
                         <label for="exampleInputEmail1" class="font-weight-bold">Name</label>
                         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                         <small id="emailHelp" class="form-text text-muted">What is your name?</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleTextarea" class="font-weight-bold">Location</label>
+                        <input class="form-control" id="address">
+                        <br />
+                        <div class="clearfix">
+                            <div class="float-right">
+                                <input type="button" class="btn btn-primary" value="Update Map" onclick="codeAddress()">
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1" class="font-weight-bold">Phone Number</label>
@@ -92,13 +104,12 @@
                     </div>
                 </div>
                 <div class="col-6">
-                    <div class="form-group">
-                        <label for="exampleTextarea" class="font-weight-bold">Location</label>
-                        <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
-                    </div>
-                    <div id="map" class="d-flex align-items-center">
+                    <div class="d-flex align-items-center">
                         <div class="container">
-                            <img src="{{asset("map.PNG")}}" alt="" class="img-fluid" alt="Responsive image">
+                            <div id="map" style="width: 500px; height: 500px;"></div>
+                            <div>
+
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -110,6 +121,37 @@
         </form>
     </div>
 </div>
+
+<script>
+    var geocoder;
+    var map;
+    function initMap() {
+        geocoder = new google.maps.Geocoder();
+        var latlng = new google.maps.LatLng({{$current_location['lat']}}, {{$current_location['lng']}});
+        var mapOptions = {
+            zoom: 15,
+            center: latlng
+        }
+        map = new google.maps.Map(document.getElementById('map'), mapOptions);
+    }
+    function codeAddress() {
+        var address = document.getElementById('address').value;
+        geocoder.geocode( { 'address': address}, function(results, status) {
+            if (status == 'OK') {
+                map.setCenter(results[0].geometry.location);
+                var marker = new google.maps.Marker({
+                    map: map,
+                    position: results[0].geometry.location
+                });
+            } else {
+                alert('Geocode was not successful for the following reason: ' + status);
+            }
+        });
+    }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgzexPGNw2G1qHMueCq6K700XZyYrJIDE&callback=initMap">
+</script>
 
 <!-- jQuery first, then Tether, then Bootstrap JS. -->
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
