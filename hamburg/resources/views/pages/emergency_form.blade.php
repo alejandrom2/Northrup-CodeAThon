@@ -141,7 +141,45 @@
             center: latlng
         }
         map = new google.maps.Map(document.getElementById('map'), mapOptions);
-    }
+
+        @foreach ($zombie_location as $zombie)
+        var marker = new google.maps.Marker({
+            position: {lat: {{$zombie['location']['lat']}}, lng: {{$zombie['location']['lng']}} },
+            map: map,
+            title: 'Zombie!',
+            label: 'Z'
+        });
+        @endforeach
+
+        @foreach ($water_location as $water)
+        var marker = new google.maps.Marker({
+            position: {lat: {{$water['location']['lat']}}, lng: {{$water['location']['lng']}} },
+            map: map,
+            title: 'Water!',
+            label: 'W'
+        });
+        @endforeach
+
+        @foreach ($power_location as $power)
+        var marker = new google.maps.Marker({
+            position: {lat: {{$power['location']['lat']}}, lng: {{$power['location']['lng']}} },
+            map: map,
+            title: 'Power!',
+            label: 'P'
+        });
+        @endforeach
+
+        @foreach ($shelter_location as $shelter)
+        var marker = new google.maps.Marker({
+            position: {lat: {{$power['location']['lat']}}, lng: {{$power['location']['lng']}} },
+            map: map,
+            title: 'Shelter!',
+            label: 'S'
+        });
+        @endforeach
+    };
+
+
     function codeAddress() {
         var address = document.getElementById('address').value;
         geocoder.geocode( { 'address': address}, function(results, status) {
@@ -157,6 +195,7 @@
                 alert('Geocode was not successful for the following reason: ' + status);
             }
         });
+
     }
 </script>
 <script async defer
