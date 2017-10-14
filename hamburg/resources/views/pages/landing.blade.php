@@ -47,7 +47,7 @@
                     <div id="map" style="width: 500px; height: 500px;"></div>
                 </div>
                 <br />
-                <button type="button" class="btn btn-primary btn-block">Download</button>
+                <button type="button" class="btn btn-primary btn-block" id="download">Download</button>
             </div>
             <div class="col-6">
                 <h1 class="text-center">Volunteer!</h1>
@@ -138,8 +138,19 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgzexPGNw2G1qHMueCq6K700XZyYrJIDE&callback=initMap">
 </script>
 
-<!-- jQuery first, then Tether, then Bootstrap JS. -->
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
+<script>
+    $('#download').on('click', function() {
+        var doc = new jsPDF();
+        var source = window.document.getElementsByTagName("body")[0];
+        doc.fromHTML(source);
+        doc.save('map.pdf')
+    });
+</script>
+
+
+<!-- jQuery first, then Tether, then Bootstrap JS. -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 </body>
