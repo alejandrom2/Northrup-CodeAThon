@@ -48,7 +48,7 @@ Route::get('/form', function() {
     return view('pages.emergency_form', compact('current_location'));
 });
 
-Route::get('/formTest','EmergencyCallForm@postForm');
+Route::post('/formTest','EmergencyCallForm@postForm');
 
 
 Route::get('/distresses', 'HomeController@distresses');

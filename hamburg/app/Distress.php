@@ -9,6 +9,7 @@ use App\Distress_volunteers;
 class Distress extends Model
 {
    protected $table = 'distresses';
+   protected $guarded = [];
 
    public function volunteers()
    {

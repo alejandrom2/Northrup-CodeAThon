@@ -8,6 +8,7 @@ use App\Volunteer;
 class Resource extends Model
 {
     protected $table = 'resources';
+    protected $guarded = [];
 
     public function locate(){
 		return $this->hasOne('App\Location','source_id','location_id');
