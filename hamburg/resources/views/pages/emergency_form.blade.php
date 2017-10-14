@@ -104,12 +104,6 @@
                     </div>
                 </div>
                 <div class="col-6">
-                    <div class="form-group">
-                        <label for="exampleTextarea" class="font-weight-bold">Location</label>
-                        <textarea class="form-control" id="exampleTextarea" name="description" rows="3"></textarea>
-                    </div>
-                    <div id="map" class="d-flex align-items-center">
-
                     <div class="d-flex align-items-center">
                         <div class="container">
                             <div id="map" style="width: 500px; height: 500px;"></div>
