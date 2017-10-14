@@ -44,6 +44,12 @@ class EmergencyCallForm extends Controller
                 ]);
             }
         }
-        return back()->withInput($request->session()->flash('success','Emergency Form Received! Help is on its way ASAP!'));
+
+        $current_location = [
+            'lat' => 33.891992,
+            'lng' => -118.373088
+        ];
+
+        return redirect()->back()->withInput([$current_location, $request->session()->flash('success','Emergency Form Received! Help is on its way ASAP!')]);
     }
 }
