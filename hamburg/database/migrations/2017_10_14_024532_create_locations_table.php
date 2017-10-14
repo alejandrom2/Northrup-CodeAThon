@@ -18,7 +18,7 @@ class CreateLocationsTable extends Migration
             $table->string('lat');
             $table->string('long');
             $table->string('source_type');
-            $table->string('source_id');
+            $table->string('source_id')->nullable();
             $table->timestamps();
         });
     }

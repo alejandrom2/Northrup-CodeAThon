@@ -16,10 +16,10 @@ class CreateDistressesTable extends Migration
         Schema::create('distresses', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->integer('number');
-            $table->string('location_id');
+            $table->string('phone_number');
+            $table->string('location_id')->nullable();
             $table->boolean('safe');
-            $table->text('details');
+            $table->text('details')->nullable();
             $table->timestamps();
         });
     }
