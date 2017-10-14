@@ -21,15 +21,15 @@ Route::get('/form', 'HomeController@form');
 //     return view('pages.emergency_form', compact('current_location'));
 // });
 
-Route::get('/volunteer', function() {
+// Route::get('/volunteer', function() {
 
-    $current_location = [
-        'lat' => 33.891992,
-        'lng' => -118.373088
-    ];
+//     $current_location = [
+//         'lat' => 33.891992,
+//         'lng' => -118.373088
+//     ];
 
-    return view('pages.volunteer', compact('current_location'));
-});
+//     return view('pages.volunteer', compact('current_location'));
+// });
 
 Route::post('/formTest','EmergencyCallForm@postForm');
 
@@ -37,6 +37,7 @@ Route::post('/formTest','EmergencyCallForm@postForm');
 Route::get('/distresses', 'HomeController@distresses');
 Route::get('/resources', 'HomeController@resources');
 Route::get('/volunteers', 'HomeController@volunteers');
+Route::get('/volunteer', 'VolunteerController@getVolunteers');
 
 Auth::routes();
 
