@@ -64,37 +64,37 @@
                     <label for="exampleInputEmail1" class="font-weight-bold">Attributes</label>
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input type="checkbox" id='safe' name="safe" class="form-check-input">
+                            <input type="checkbox" id='safe' name="safe" class="form-check-input" value="0">
                             Safe?
                         </label>
                     </div>
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input type="checkbox" name="resource[help]" class="form-check-input">
+                            <input type="checkbox" id="resource[help]"" name="resource[help]" class="form-check-input">
                             Requesting help.
                         </label>
                     </div>
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input type="checkbox" name="resource[water]" class="form-check-input">
+                            <input type="checkbox" id="resource[water]" name="resource[water]" class="form-check-input">
                             Water?
                         </label>
                     </div>
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input type="checkbox" name="resource[power]" class="form-check-input">
+                            <input type="checkbox" id="resource[power]" name="resource[power]" class="form-check-input">
                             Power?
                         </label>
                     </div>
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input type="checkbox" name="resource[shelter]" class="form-check-input">
+                            <input type="checkbox" id="resource[shelter]" name="resource[shelter]" class="form-check-input">
                             Shelter?
                         </label>
                     </div>
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input type="checkbox" name="resource[zombies]" class="form-check-input">
+                            <input type="checkbox" id="resource[zombies]" name="resource[zombies]" class="form-check-input">
                             Zombies?
                         </label>
                     </div>
@@ -114,12 +114,12 @@
                     </div>
                 </div>
             </div>
+            <input type="hidden" name="lat" id="lat" value="0" />
+            <input type="hidden" name="lng" id="lng" value="0" />
             {{-- Name this better --}}
-            <input type="hidden" name="orderNumber" id="lat" value="0" />
-            <input type="hidden" name="orderNumber" id="lng" value="0" />
             <br />
             <div class="row float-left">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                    {!! Form::submit('Submit', array('class' => 'btn btn-primary')) !!}
             </div>
         {!! Form::close() !!}
     </div>
@@ -133,6 +133,7 @@
 <script>
     var geocoder;
     var map;
+    var updated;
     function initMap() {
         geocoder = new google.maps.Geocoder();
         var latlng = new google.maps.LatLng({{$current_location['lat']}}, {{$current_location['lng']}});
