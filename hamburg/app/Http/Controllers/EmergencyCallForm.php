@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Session;
 use App\Location;
 use App\Distress;
 use App\Resource;
@@ -43,6 +44,6 @@ class EmergencyCallForm extends Controller
                 ]);
             }
         }
-        return redirect('/form');
+        return back()->withInput($request->session()->flash('success','Emergency Form Received! Help is on its way ASAP!'));
     }
 }
