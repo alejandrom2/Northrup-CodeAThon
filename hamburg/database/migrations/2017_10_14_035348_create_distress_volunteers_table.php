@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLocationsTable extends Migration
+class CreateDistressVolunteersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateLocationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('locations', function (Blueprint $table) {
+        Schema::create('distress_volunteers', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('lat');
-            $table->string('long');
-            $table->string('source_type');
-            $table->string('source_id');
+            $table->string('distress_id');
+            $table->string('volunteer_id');
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class CreateLocationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('locations');
+        Schema::dropIfExists('distress_volunteers');
     }
 }
