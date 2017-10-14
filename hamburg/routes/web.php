@@ -12,7 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('pages.landing');
+    $current_location = [
+        'lat' => 33.891992,
+        'lng' => -118.373088
+    ];
+    return view('pages.landing', compact('current_location'));
 });
 
 Route::get('/form', function() {
