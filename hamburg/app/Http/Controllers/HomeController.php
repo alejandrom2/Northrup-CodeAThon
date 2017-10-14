@@ -48,7 +48,7 @@ class HomeController extends Controller
 
         $current_location = [
             'lat' => 33.891992,
-            'long' => -118.373088
+            'lng' => -118.373088
         ];
 
         return view('pages.landing', compact('current_location', 'zombie_location', 'water_location', 'power_location', 'shelter_location'));

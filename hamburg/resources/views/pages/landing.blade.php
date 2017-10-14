@@ -79,7 +79,7 @@
 
 <script>
     function initMap() {
-        var uluru = {lat: {{$current_location['lat']}}, lng: {{$current_location['long']}}};
+        var uluru = {lat: {{$current_location['lat']}}, lng: {{$current_location['lng']}} };
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 15,
             center: uluru
@@ -91,7 +91,7 @@
 
         @foreach ($zombie_location as $zombie)
         var marker = new google.maps.Marker({
-            position: {lat: {{$zombie['location']['lat']}}, lng: {{$zombie['location']['long']}}},
+            position: {lat: {{$zombie['location']['lat']}}, lng: {{$zombie['location']['lng']}} },
             map: map,
             title: 'Zombie!',
             label: 'Z'
@@ -100,7 +100,7 @@
 
         @foreach ($water_location as $water)
         var marker = new google.maps.Marker({
-            position: {lat: {{$water['location']['lat']}}, lng: {{$water['location']['long']}}},
+            position: {lat: {{$water['location']['lat']}}, lng: {{$water['location']['lng']}} },
             map: map,
             title: 'Water!',
             label: 'W'
@@ -109,7 +109,7 @@
 
         @foreach ($power_location as $power)
         var marker = new google.maps.Marker({
-            position: {lat: {{$power['location']['lat']}}, lng: {{$power['location']['long']}}},
+            position: {lat: {{$power['location']['lat']}}, lng: {{$power['location']['lng']}} },
             map: map,
             title: 'Power!',
             label: 'P'
@@ -118,7 +118,7 @@
 
         @foreach ($shelter_location as $shelter)
         var marker = new google.maps.Marker({
-            position: {lat: {{$shelter['location']['lat']}}, lng: {{$shelter['location']['long']}}},
+            position: {lat: {{$power['location']['lat']}}, lng: {{$power['location']['lng']}} },
             map: map,
             title: 'Shelter!',
             label: 'S'

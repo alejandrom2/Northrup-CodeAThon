@@ -23,7 +23,7 @@ class ResourcesLocationSeeder extends Seeder
         	]);
         	$location = Location::create([
         		'lat' => rand(33.85*1000000, 33.9*1000000) / 1000000,
-                'long' => rand((-118.36)*1000000, (-118.39)*1000000) / 1000000,
+                'lng' => rand((-118.36)*1000000, (-118.39)*1000000) / 1000000,
         		'source_type' => 'resources'
         	]);
         	$resource = Resource::create([
