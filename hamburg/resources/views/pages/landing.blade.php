@@ -86,6 +86,34 @@
             position: uluru,
             map: map
         });
+
+        var marker = new google.maps.Marker({
+            position: {lat: {{$zombie_location['lat']}}, lng: {{$zombie_location['lng']}}},
+            map: map,
+            title: 'Zombie!',
+            label: 'Z'
+        });
+
+        var marker = new google.maps.Marker({
+            position: {lat: {{$water_location['lat']}}, lng: {{$water_location['lng']}}},
+            map: map,
+            title: 'Water!',
+            label: 'W'
+        });
+
+        var marker = new google.maps.Marker({
+            position: {lat: {{$power_location['lat']}}, lng: {{$power_location['lng']}}},
+            map: map,
+            title: 'Power!',
+            label: 'P'
+        });
+
+        var marker = new google.maps.Marker({
+            position: {lat: {{$shelter_location['lat']}}, lng: {{$shelter_location['lng']}}},
+            map: map,
+            title: 'Shelter!',
+            label: 'S'
+        });
     }
 </script>
 <script async defer
