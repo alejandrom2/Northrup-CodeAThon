@@ -13,6 +13,7 @@
 <nav class="navbar navbar-light bg-faded">
     <h1 class="navbar-brand mb-0">SAVE THIS NUMBER! Call or Text 1-800-XXX-XXXX</h1>
 </nav>
+{{--<img src="https://images.unsplash.com/photo-1502820563747-6ef04d9f4f37?dpr=1&auto=compress,format&fit=crop&w=1950&h=&q=80&cs=tinysrgb&crop=" class="img-fluid" alt="" style="position: absolute">--}}
 <div class="container">
     <br />
     <div class="row d-flex align-items-center">
@@ -33,6 +34,8 @@
         </div>
     </div>
     <br />
+    <hr />
+    <br />
     <div class="container">
         <div class="row">
             <div class="col-6">
@@ -45,7 +48,7 @@
                 <button type="button" class="btn btn-primary btn-block">Download</button>
             </div>
             <div class="col-6">
-                <h1>Volunteer!</h1>
+                <h1 class="text-center">Volunteer!</h1>
                 <br />
                 {!! Form::open(['url' => '/volunteerSubmit', 'method' => 'post','class' => 'name']) !!}
                     <div class="form-group">
