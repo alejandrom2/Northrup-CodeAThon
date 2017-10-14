@@ -30,7 +30,8 @@ Route::get('/volunteers', 'HomeController@volunteers');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/volunteerSubmit', 'VolunteerController@submit')->name('volunteerSubmit');
 
-Route::get('/mapTest',function() {
-	return view('mapTest');
-});
+// Route::get('/mapTest',function() {
+// 	return view('mapTest');
+// });
