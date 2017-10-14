@@ -32,7 +32,3 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/volunteerSubmit', 'VolunteerController@submit')->name('volunteerSubmit');
-
-// Route::get('/mapTest',function() {
-// 	return view('mapTest');
-// });
