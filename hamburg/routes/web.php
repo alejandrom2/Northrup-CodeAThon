@@ -11,34 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    $current_location = [
-        'lat' => 33.891992,
-        'lng' => -118.373088
-    ];
-
-    $zombie_location = [
-        'lat' => 33.891,
-        'lng' => -118.37
-    ];
-
-    $water_location = [
-        'lat' => 33.885,
-        'lng' => -118.375
-    ];
-
-    $power_location = [
-        'lat' => 33.8856,
-        'lng' => -118.3756
-    ];
-
-    $shelter_location = [
-        'lat' => 33.8840,
-        'lng' => -118.38
-    ];
-
-    return view('pages.landing', compact('current_location', 'zombie_location', 'water_location', 'power_location', 'shelter_location'));
-});
+Route::get('/', 'HomeController@index');
 
 Route::get('/form', function() {
     $current_location = [
