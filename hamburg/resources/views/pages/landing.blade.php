@@ -47,25 +47,25 @@
             <div class="col-6">
                 <h1>Volunteer!</h1>
                 <br />
-                <form>
+                {!! Form::open(['url' => '/volunteerSubmit', 'method' => 'post','class' => 'name']) !!}
                     <div class="form-group">
                         <label for="exampleInputEmail1" class="font-weight-bold">Name</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp" placeholder="Enter name">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1" class="font-weight-bold">Point of Contact</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <input type="tel" class="form-control" id="phone" name="phone" aria-describedby="emailHelp" placeholder="Enter POC">
                         <small id="emailHelp" class="form-text text-muted">We need your help, but we need to contact you!</small>
                     </div>
                     <div class="form-group">
                         <label for="exampleTextarea" class="font-weight-bold">Experience</label>
-                        <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                        <textarea class="form-control" id="experience" name="experience" rows="3"></textarea>
                         <small id="emailHelp" class="form-text text-muted">Please be honest... This is crutial. It's for us to help you help others best.</small>
                     </div>
                     <div class="float-right">
-                        <button type="button" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary submit">Submit</button>
                     </div>
-                </form>
+                {!! Form::close() !!}
             </div>
 
         </div>
