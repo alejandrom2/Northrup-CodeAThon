@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Volunteer extends Model
 {
 	protected $table = 'volunteers';
+	protected $guarded = [];
 
 	public function distresses()
 	{
