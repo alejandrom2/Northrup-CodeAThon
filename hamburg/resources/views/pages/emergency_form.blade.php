@@ -38,7 +38,7 @@
     <div class="container">
         <h1 class="text-center">Emergency Form</h1>
         <br />
-        {!! Form::open(['url' => '/formTest', 'method' => 'post','class' => 'name']) !!}
+        {!! Form::open(['url' => '/formTest', 'method' => 'post' ,'class' => 'name']) !!}
             <div class="row">
                 <div class="col-6">
                     <div class="form-group">
