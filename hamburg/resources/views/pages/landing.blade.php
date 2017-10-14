@@ -42,7 +42,7 @@
                 <h1 class="text-center">Save this map!</h1>
                 <br />
                 <div class="container">
-                    <img src="{{asset("map.PNG")}}" alt="" class="img-fluid" alt="Responsive image">
+                    <div id="map" style="width: 500px; height: 500px;"></div>
                 </div>
                 <br />
                 <button type="button" class="btn btn-primary btn-block">Download</button>
@@ -74,6 +74,23 @@
         </div>
     </div>
 </div>
+
+<script>
+    function initMap() {
+        var uluru = {lat: {{$current_location['lat']}}, lng: {{$current_location['lng']}}};
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: uluru
+        });
+        var marker = new google.maps.Marker({
+            position: uluru,
+            map: map
+        });
+    }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWDhwOMEpimFfwyod7RC6SbqfIrvk17j0&callback=initMap">
+</script>
 
 <!-- jQuery first, then Tether, then Bootstrap JS. -->
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
