@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 </head>
-<body>
+<body onload="initialize()">
 <!-- As a heading -->
 <nav class="navbar navbar-light bg-faded">
     <h1 class="navbar-brand mb-0">SAVE THIS NUMBER! Call or Text 1-800-XXX-XXXX</h1>
@@ -45,6 +45,10 @@
                 <br />
                 <div class="container">
                     <div id="map" style="width: 500px; height: 500px;"></div>
+                    <div>
+                        <input id="address" type="textbox" value="Sydney, NSW">
+                        <input type="button" value="Encode" onclick="codeAddress()">
+                    </div>
                 </div>
                 <br />
                 <button type="button" class="btn btn-primary btn-block">Download</button>
@@ -127,7 +131,7 @@
     }
 </script>
 <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWDhwOMEpimFfwyod7RC6SbqfIrvk17j0&callback=initMap">
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgzexPGNw2G1qHMueCq6K700XZyYrJIDE&callback=initMap">
 </script>
 
 <!-- jQuery first, then Tether, then Bootstrap JS. -->
