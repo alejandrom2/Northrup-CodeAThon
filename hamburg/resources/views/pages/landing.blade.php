@@ -79,7 +79,7 @@
 
 <script>
     function initMap() {
-        var uluru = {lat: {{$current_location['lat']}}, lng: {{$current_location['lng']}}};
+        var uluru = {lat: {{$current_location['lat']}}, lng: {{$current_location['long']}}};
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 15,
             center: uluru
@@ -89,33 +89,41 @@
             map: map
         });
 
+        @foreach ($zombie_location as $zombie)
         var marker = new google.maps.Marker({
-            position: {lat: {{$zombie_location['lat']}}, lng: {{$zombie_location['lng']}}},
+            position: {lat: {{$zombie['location']['lat']}}, lng: {{$zombie['location']['long']}}},
             map: map,
             title: 'Zombie!',
             label: 'Z'
         });
+        @endforeach
 
+        @foreach ($water_location as $water)
         var marker = new google.maps.Marker({
-            position: {lat: {{$water_location['lat']}}, lng: {{$water_location['lng']}}},
+            position: {lat: {{$water['location']['lat']}}, lng: {{$water['location']['long']}}},
             map: map,
             title: 'Water!',
             label: 'W'
         });
+        @endforeach
 
+        @foreach ($power_location as $power)
         var marker = new google.maps.Marker({
-            position: {lat: {{$power_location['lat']}}, lng: {{$power_location['lng']}}},
+            position: {lat: {{$power['location']['lat']}}, lng: {{$power['location']['long']}}},
             map: map,
             title: 'Power!',
             label: 'P'
         });
+        @endforeach
 
+        @foreach ($shelter_location as $shelter)
         var marker = new google.maps.Marker({
-            position: {lat: {{$shelter_location['lat']}}, lng: {{$shelter_location['lng']}}},
+            position: {lat: {{$shelter['location']['lat']}}, lng: {{$shelter['location']['long']}}},
             map: map,
             title: 'Shelter!',
             label: 'S'
         });
+        @endforeach
     }
 </script>
 <script async defer

@@ -37,4 +37,20 @@ class HomeController extends Controller
     {
         return Resource::with('location')->get();
     }
+
+    public function index()
+    {
+        $resources = Resource::with('location')->get()->groupBy('type');
+        $zombie_location = $resources['zombie'];
+        $water_location = $resources['water'];
+        $power_location = $resources['power'];
+        $shelter_location = $resources['shelter'];
+
+        $current_location = [
+            'lat' => 33.891992,
+            'long' => -118.373088
+        ];
+
+        return view('pages.landing', compact('current_location', 'zombie_location', 'water_location', 'power_location', 'shelter_location'));
+    }
 }
