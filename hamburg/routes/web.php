@@ -23,6 +23,9 @@ Route::get('/form', function() {
     return view('pages.emergency_form');
 });
 
+Route::get('/formTest','EmergencyCallForm@postForm');
+
+
 Route::get('/distresses', 'HomeController@distresses');
 Route::get('/resources', 'HomeController@resources');
 Route::get('/volunteers', 'HomeController@volunteers');
@@ -30,7 +33,8 @@ Route::get('/volunteers', 'HomeController@volunteers');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/volunteerSubmit', 'VolunteerController@submit')->name('volunteerSubmit');
 
-Route::get('/mapTest',function() {
-	return view('mapTest');
-});
+// Route::get('/mapTest',function() {
+// 	return view('mapTest');
+// });
