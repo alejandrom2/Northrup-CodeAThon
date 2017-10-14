@@ -142,6 +142,11 @@
         }
         map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
+        var marker = new google.maps.Marker({
+            position: latlng,
+            map: map
+        });
+
         @foreach ($zombie_location as $zombie)
         var marker = new google.maps.Marker({
             position: {lat: {{$zombie['location']['lat']}}, lng: {{$zombie['location']['lng']}} },
