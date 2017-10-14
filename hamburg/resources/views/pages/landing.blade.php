@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 </head>
-<body onload="initialize()">
+<body>
 <!-- As a heading -->
 <nav class="navbar navbar-light bg-faded">
     <h1 class="navbar-brand mb-0">SAVE THIS NUMBER! Call or Text 1-800-XXX-XXXX</h1>
@@ -45,10 +45,6 @@
                 <br />
                 <div class="container">
                     <div id="map" style="width: 500px; height: 500px;"></div>
-                    <div>
-                        <input id="address" type="textbox" value="Sydney, NSW">
-                        <input type="button" value="Encode" onclick="codeAddress()">
-                    </div>
                 </div>
                 <br />
                 <button type="button" class="btn btn-primary btn-block">Download</button>
