@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Distress;
 use App\Volunteer;
+use App\Resource;
 
 class HomeController extends Controller
 {
@@ -31,5 +32,9 @@ class HomeController extends Controller
     public function volunteers()
     {
         return Volunteer::with('distresses')->get();
+    }
+    public function resources()
+    {
+        return Resource::with('location')->get();
     }
 }
