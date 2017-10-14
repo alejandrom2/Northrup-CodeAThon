@@ -43,6 +43,12 @@ class EmergencyCallForm extends Controller
                 ]);
             }
         }
-        return redirect('/form');
+
+        $current_location = [
+            'lat' => 33.891992,
+            'lng' => -118.373088
+        ];
+
+        return redirect('/form', compact('current_location'));
     }
 }

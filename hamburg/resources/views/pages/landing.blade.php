@@ -90,39 +90,47 @@
         });
 
         @foreach ($zombie_location as $zombie)
-        var marker = new google.maps.Marker({
-            position: {lat: {{$zombie['location']['lat']}}, lng: {{$zombie['location']['lng']}} },
-            map: map,
-            title: 'Zombie!',
-            label: 'Z'
-        });
+            @if ($zombie['location'] != NULL)
+                var marker = new google.maps.Marker({
+                    position: {lat: {{$zombie['location']['lat']}}, lng: {{$zombie['location']['lng']}} },
+                    map: map,
+                    title: 'Zombie!',
+                    label: 'Z'
+                });
+            @endif
         @endforeach
 
         @foreach ($water_location as $water)
-        var marker = new google.maps.Marker({
-            position: {lat: {{$water['location']['lat']}}, lng: {{$water['location']['lng']}} },
-            map: map,
-            title: 'Water!',
-            label: 'W'
-        });
+            @if ($water['location'] != NULL)
+                var marker = new google.maps.Marker({
+                    position: {lat: {{$water['location']['lat']}}, lng: {{$water['location']['lng']}} },
+                    map: map,
+                    title: 'Water!',
+                    label: 'W'
+                });
+            @endif
         @endforeach
 
         @foreach ($power_location as $power)
-        var marker = new google.maps.Marker({
-            position: {lat: {{$power['location']['lat']}}, lng: {{$power['location']['lng']}} },
-            map: map,
-            title: 'Power!',
-            label: 'P'
-        });
+            @if ($power['location'] != NULL)
+                var marker = new google.maps.Marker({
+                    position: {lat: {{$power['location']['lat']}}, lng: {{$power['location']['lng']}} },
+                    map: map,
+                    title: 'Power!',
+                    label: 'P'
+                });
+            @endif
         @endforeach
 
         @foreach ($shelter_location as $shelter)
-        var marker = new google.maps.Marker({
-            position: {lat: {{$power['location']['lat']}}, lng: {{$power['location']['lng']}} },
-            map: map,
-            title: 'Shelter!',
-            label: 'S'
-        });
+            @if ($shelter['location'] != NULL)
+                var marker = new google.maps.Marker({
+                    position: {lat: {{$power['location']['lat']}}, lng: {{$power['location']['lng']}} },
+                    map: map,
+                    title: 'Shelter!',
+                    label: 'S'
+                });
+            @endif
         @endforeach
     }
 </script>
