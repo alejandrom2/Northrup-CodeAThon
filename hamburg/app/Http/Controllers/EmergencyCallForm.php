@@ -23,17 +23,18 @@ class EmergencyCallForm extends Controller
             $safe = true;
         }else $safe = false;
 
-        $distress = Distress::create([
-            'name' => $request->name,
-            'phone_number' => $request->phone_number,
-            'safe' => $safe,
-            'details' => $request->description
-        ]);
         $location = Location::create([
             'lat' => $request->lat,
             'lng' => $request->lng,
             'source_type' => 'distress',
-            'source_id' => $distress->id
+            // 'source_id' => $distress->id
+        ]);
+        $distress = Distress::create([
+            'name' => $request->name,
+            'phone_number' => $request->phone_number,
+            'safe' => $safe,
+            'location_id' => $location->id,
+            'details' => $request->description
         ]);
         if($request->has('resource')) {
             foreach($request->resource as $type => $resource) {
