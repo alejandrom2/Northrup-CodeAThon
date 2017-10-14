@@ -21,3 +21,7 @@ Route::get('/volunteers', 'HomeController@volunteers');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/mapTest',function() {
+	return view('mapTest');
+});
