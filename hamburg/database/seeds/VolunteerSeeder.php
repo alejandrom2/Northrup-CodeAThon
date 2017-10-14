@@ -14,7 +14,7 @@ class VolunteerSeeder extends Seeder
     {
     	$values = [
     		'Alex Backhand' => 'My name is Alex, but some people call me Rick Grimes. I\'ve been killing zombies for years now.',
-    		'Alejandra Martinez' => 'I have a tractor',
+    		'Alejandro Martinez' => 'I have a tractor',
     		'Joshua' => 'I just wanna help',
     		'John Doe' => 'I lost my wife, Jane Doe in hurricane once. Never forget. Never again.',
     		'David Beckham' => 'Years of experience. Full arsenal, and bats at the ready.'
